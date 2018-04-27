@@ -1,0 +1,10 @@
+<nz-card [nzBordered]="false">
+    <nz-steps [(nzCurrent)]="item.step">
+        <nz-step nzTitle="Step 1: Personal Details"></nz-step>
+        <nz-step nzTitle="Step 2: Contact Details"></nz-step>
+        <nz-step nzTitle="Step 3: Course details"></nz-step>
+    </nz-steps>
+    <app-step1-form *ngIf="item.step==0"></app-step1-form>
+    <app-step2-form *ngIf="item.step==1"></app-step2-form>
+    <app-step3-form *ngIf="item.step==2"></app-step3-form>
+</nz-card>

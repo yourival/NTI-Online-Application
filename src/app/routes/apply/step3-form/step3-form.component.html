@@ -1,0 +1,45 @@
+<form nz-form [formGroup]="form" (ngSubmit)="_submitForm()">
+    <nz-divider class="mb-lg"></nz-divider>
+    <nz-form-item>
+        <nz-form-label nzXs="24" nzSm="7" nzRequired>Course(s)</nz-form-label>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+            <nz-select nzMode="multiple" [nzMaxMultipleCount]="2" nzAllowClear [nzPlaceHolder]="'Select up to two courses'" formControlName="courses" nzShowSearch>
+                <nz-option *ngFor="let option of courses" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                </nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired>Semester</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                <nz-select nzAllowClear [nzPlaceHolder]="'Semester you are applying for'" formControlName="semester" nzShowSearch>
+                    <nz-option *ngFor="let option of semesters" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                    </nz-option>
+                </nz-select>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+                <nz-form-label nzXs="24" nzSm="7" nzRequired>Year</nz-form-label>
+                <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                    <nz-select nzAllowClear [nzPlaceHolder]="'Which year you are applying for'" formControlName="semester_year" nzShowSearch>
+                        <nz-option *ngFor="let option of semester_years" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                        </nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                    <nz-form-label nzXs="24" nzSm="7" nzRequired>Mode of Study</nz-form-label>
+                    <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                        <nz-select nzAllowClear [nzPlaceHolder]="'Mode of Study'" formControlName="study_mode" nzShowSearch>
+                            <nz-option *ngFor="let option of studyModes" [nzLabel]="option.label" [nzValue]="option.value" [nzDisabled]="option.disabled">
+                            </nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+    <nz-form-item>
+        <nz-form-control nzXs="24" nzSm="12" nzMd="10" nzOffset="5">
+            <button nz-button (click)="prev()">Back</button>
+            <button nz-button nzType="primary" [disabled]="form.invalid">Next</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>

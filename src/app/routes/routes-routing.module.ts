@@ -5,6 +5,7 @@ import { environment } from '@env/environment';
 import { LayoutDefaultComponent } from '../layout/default/default.component';
 import { LayoutFullScreenComponent } from '../layout/fullscreen/fullscreen.component';
 import { LayoutPassportComponent } from '../layout/passport/passport.component';
+import { ApplyscreenComponent } from '../layout/applyscreen/applyscreen.component';
 // dashboard pages
 import { DashboardV1Component } from './dashboard/v1/v1.component';
 import { DashboardAnalysisComponent } from './dashboard/analysis/analysis.component';
@@ -45,6 +46,14 @@ const routes: Routes = [
         component: LayoutFullScreenComponent,
         children: [
             { path: '', loadChildren: './data-v/data-v.module#DataVModule' }
+        ]
+    },
+    // application full screen
+    {
+        path: '',
+        component: ApplyscreenComponent,
+        children: [
+            { path: 'apply', loadChildren: './apply/apply.module#ApplyModule' }
         ]
     },
     // passport

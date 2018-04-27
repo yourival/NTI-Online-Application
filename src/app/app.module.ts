@@ -24,6 +24,7 @@ import { I18NService } from '@core/i18n/i18n.service';
 // third
 import { UEditorModule } from 'ngx-ueditor';
 import { NgxTinymceModule } from 'ngx-tinymce';
+import { NzListModule, NzCardModule, NzDividerModule } from 'ng-zorro-antd-extra';
 // JSON-Schema form
 // import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
 
@@ -41,6 +42,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         AppComponent
     ],
     imports: [
+        NzCardModule,
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,

@@ -1,0 +1,60 @@
+<form nz-form [formGroup]="form" (ngSubmit)="_submitForm()"> 
+        <nz-divider class="mb-lg"></nz-divider>    
+    <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired>Title</nz-form-label>
+            <nz-select
+            style="width: 200px;"
+            nzAllowClear
+            [nzPlaceHolder]="'Select a title'"
+            formControlName="title"
+            nzShowSearch>
+                <nz-option
+                *ngFor="let option of searchOptions"
+                [nzLabel]="option.label"
+                [nzValue]="option.value"
+                [nzDisabled]="option.disabled">
+                </nz-option>
+            </nz-select>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired nzFor="last_name">Last Name</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                <input nz-input formControlName="last_name" id="last_name">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired nzFor="first_name">First Name</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                <input nz-input formControlName="first_name" id="first_name">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired nzFor="dob">Date of Birth</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                    <input nz-input formControlName="dob" id="dob">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired>Email</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                    <input nz-input formControlName="email" id="email">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzXs="24" nzSm="7" nzRequired>Confirm Email</nz-form-label>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10">
+                <input nz-input formControlName="confirm_email" id="confirm_email">
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control nzXs="24" nzSm="12" nzMd="10" nzOffset="5">
+                <button nz-button nzType="primary" [disabled]="form.invalid">Next</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+    <div class="border-top-1 mt-lg px-lg text-grey-dark">
+        <h3 class="h3 my-md">Some Information Here</h3>
+        <h4 class="h4 mb-sm">Information Title</h4>
+        <p class="mb-sm">If you need help to complete your UOWApplyOnline application, please email uow_applyonline@uow.edu.au with the details of your problem. We would also appreciate your feedback regarding the submission of this on-line form. Thank you for your interest in studying at the University.</p>
+    </div>
+    
